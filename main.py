@@ -4,7 +4,7 @@ import time
 import random
 import logging
 from pyzabbix import ZabbixAPI
-
+host_list =  []
 
 # Zabbix API connection
 zapi = ZabbixAPI("https://mon.ecowan.network")
@@ -15,4 +15,6 @@ print("Connecté au serveur Zabbix d'ECOWAN. Version %s" % zapi.api_version())
 hosts = zapi.host.get(output="extend")
 for h in hosts:
     print("Host: %s" % h["host"])
+    host_list.append(h["host"])
 
+print(host_list)
