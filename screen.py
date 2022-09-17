@@ -48,52 +48,18 @@ if user == b'8':
     exit()
 
 if user == b'1':
+    loading = open("loading-serveurs.txt", "tr")
     minitel.write(b'\x1b[2J') #Efface l'écran
-    minitel.write(b'\r') #Reviens au début de la ligne
-    minitel.write(b'\n')
-    minitel.write(b'Affichage des serveurs')
+    lines = loading.readlines()
     minitel.write(b'\r')
     minitel.write(b'\n')
-    minitel.write(b'Veuillez patienter...')
-    minitel.write(b'\r')
-    minitel.write(b'\n')
-    time.sleep(1)
-    minitel.write(b'\x1b[2J') #Efface l'écran
-    minitel.write(b'\r') #Reviens au début de la ligne
-    minitel.write(b'\n')
-    minitel.write(b'Affichage des serveurs')
-    minitel.write(b'\r')
-    minitel.write(b'\n')
-    minitel.write(b'Veuillez patienter...')
-    minitel.write(b'\r')
-    minitel.write(b'\n')
-    time.sleep(1)
-    minitel.write(b'\x1b[2J') #Efface l'écran
-    minitel.write(b'\r') #Reviens au début de la ligne
-    minitel.write(b'\n')
-    minitel.write(b'Affichage des serveurs')
-    minitel.write(b'\r')
-    minitel.write(b'\n')
-    minitel.write(b'Veuillez patienter...')
-    minitel.write(b'\r')
-    minitel.write(b'\n')
-    time.sleep(1)
-    minitel.write(b'\x1b[2J') #Efface l'écran
-    minitel.write(b'\r') #Reviens au début de la ligne
-    minitel.write(b'\n')
-    minitel.write(b'Affichage des serveurs')
-    minitel.write(b'\r')
-    minitel.write(b'\n')
-    minitel.write(b'Veuillez patienter...')
-    minitel.write(b'\r')
-    minitel.write(b'\n')
-    time.sleep(1)
-    minitel.write(b'\x1b[2J') #Efface l'écran
-    minitel.write(b'\r') #Reviens au début de la ligne
-    minitel.write(b'\n')
-    minitel.write(b'Affichage des serveurs')
-    minitel.write(b'\r')
+    for line in lines:
+        minitel.write(line.encode())
+        minitel.write(b'\r')
+        minitel.write(b'\n')
+        time.sleep(0.1)
+    loading.close()
     while user == 0 or user == b'':
         user = minitel.read(1)
-
+    
     
