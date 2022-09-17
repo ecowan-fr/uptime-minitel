@@ -1,0 +1,8 @@
+Bienvenue sur le service de monitoring par Minitel de ECOWAN
+Version 0.1
+Faites votre choix :
+1 - Afficher les serveurs
+2 - Afficher les services
+3 - Afficher les services en erreur
+4 - Afficher les services en warning
+5 - Afficher les services en OK
